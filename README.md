@@ -30,22 +30,24 @@ Example Input:
 
 Example Output:
 
-    18:45:27 DEBUG    src.storage - Stored dataset: id=1, rows=6
-    18:45:27 INFO     main - Uploaded dataset: id=1, filename=sample_data.csv, rows=6
-    18:45:27 DEBUG    src.storage - Retrieved metadata: id=1
-    18:45:27 INFO     src.middleware - request_id=9d26d948 POST /upload status=200 duration=5.7ms
-    18:45:27 DEBUG    src.storage - Retrieved dataset copy: id=1, rows=6
-    18:45:27 WARNING  data_pipeline.data_validator - Invalid numeric value in column 'score' at row 4: 'unknown'
-    18:45:27 DEBUG    data_pipeline.data_validator - Validation complete: 5 valid rows, 1 rows removed
-    18:45:27 INFO     main - Validated dataset: id=1, rows 6 → 5
-    18:45:27 DEBUG    data_pipeline.data_processor - remove_duplicates: 5 -> 4 rows
-    18:45:27 DEBUG    data_pipeline.data_processor - handle_missing: 4 -> 3 rows
-    18:45:27 DEBUG    src.storage - Updated dataset: id=1, rows=3
-    18:45:27 INFO     main - Processed dataset: id=1, validation_removed=1, rows_before=5, rows_after=3
-    18:45:27 INFO     src.middleware - request_id=44fa6fbd POST /datasets/1/process status=200 duration=8.5ms
-    18:45:27 DEBUG    src.storage - Retrieved dataset copy: id=1, rows=3
-    18:45:27 INFO     main - Retrieved dataset: id=1, returned_rows=3
-    18:45:27 INFO     src.middleware - request_id=476625f3 GET /datasets/1 status=200 duration=3.5ms
+22:51:08 DEBUG    src.storage - Stored dataset: id=3, rows=6
+22:51:08 INFO     main - Uploaded dataset: id=3, filename=sample_data.csv, rows=6
+22:51:08 DEBUG    src.storage - Retrieved metadata: id=3
+22:51:08 INFO     src.middleware - request_id=a82db4e9 POST /upload status=200 duration=21.5ms
+INFO:     127.0.0.1:64067 - "POST /upload HTTP/1.1" 200 OK
+22:51:19 DEBUG    src.storage - Retrieved dataset copy: id=3, rows=6
+22:51:19 INFO     main - Retrieved dataset: id=3, returned_rows=6
+22:51:19 INFO     src.middleware - request_id=d3e2aca1 GET /datasets/3 status=200 duration=4.4ms
+INFO:     127.0.0.1:52300 - "GET /datasets/3?limit=100 HTTP/1.1" 200 OK
+22:51:40 DEBUG    src.storage - Retrieved dataset copy: id=3, rows=6
+22:51:40 WARNING  data_pipeline.data_validator - Invalid numeric value in column 'score' at row 4: 'unknown'
+22:51:40 DEBUG    data_pipeline.data_validator - Validation complete: 5 valid rows, 1 rows removed
+22:51:40 INFO     main - Validated dataset: id=3, rows 6 → 5
+22:51:40 DEBUG    data_pipeline.data_processor - remove_duplicates: 5 -> 4 rows
+22:51:40 DEBUG    data_pipeline.data_processor - handle_missing: 4 -> 3 rows
+22:51:40 DEBUG    src.storage - Updated dataset: id=3, rows=3
+22:51:40 INFO     main - Processed dataset: id=3, validation_removed=1, rows_before=5, rows_after=3
+22:51:40 INFO     src.middleware - request_id=91bd2e48 POST /datasets/3/process status=200 duration=29.2ms
 
 Upload response:
 
