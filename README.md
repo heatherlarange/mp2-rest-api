@@ -5,7 +5,7 @@ My API combines the MP1 data-cleaning pipeline in a FastAPI application. By uplo
 The `data_pipeline` package is the MP1 code reused without changes. data_validator.py checks that all required columns are present, removes rows whose numeric columns have non-numeric values, and converts those columns to a numeric type. data_processor.py applies the cleaning steps turned on in the config: it removes duplicate rows, drops rows or columns with missing values, removes outliers using the IQR or z-score method, and builds the cleaning report. The `src` package holds the API-specific code. models.py defines the Pydantic models for requests and responses, and every config field has a default, so an empty `{}` body is valid. storage.py is an in-memory store that hands out increasing IDs and returns copies of each DataFrame, so a request can never change stored data by accident. middleware.py logs every request with a unique request ID, method, path, status code and duration. It also returns that ID in the `X-Request-ID` header and turns unhandled exceptions into a 500 response. utils.py sets up logging.
 
 
-Running:
+To run:
 
     python -m pip install -r requirements.txt
     python -m uvicorn main:app --reload
@@ -13,9 +13,10 @@ Running:
 Then open http://127.0.0.1:8000/docs to try the endpoints in the browser.
 
 
-Testing:
+To test:
 
     python -m pytest tests -v
+
 
 
 Example Input:
